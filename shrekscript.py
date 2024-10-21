@@ -1,6 +1,9 @@
 import serial
 import simpleaudio as sa
+import random
 
+
+clips = ["clip1.wav", "clip2.wav", "nevergonnagiveup.wav", "clip4.wav"]
 
 def readserial(comport, baudrate):
     ser = serial.Serial(comport, baudrate, timeout=0.1)
@@ -9,7 +12,7 @@ def readserial(comport, baudrate):
         if data:
             print(data)
             if data == "Success":
-                wave_obj = sa.WaveObject.from_wave_file("nevergonnagiveup.wav")
+                wave_obj = sa.WaveObject.from_wave_file(random.choice(clips))
                 play_obj = wave_obj.play()
                 play_obj.wait_done()
             elif data == "Failure":
