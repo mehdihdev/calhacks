@@ -3,7 +3,7 @@ import simpleaudio as sa
 import random
 
 
-clips = ["clip1.wav", "clip2.wav", "nevergonnagiveup.wav", "clip4.wav"]
+clips = ["clip1.wav", "clip2.wav", "clip3.wav", "nevergonnagiveup.wav"]
 
 def readserial(comport, baudrate):
     ser = serial.Serial(comport, baudrate, timeout=0.1)
